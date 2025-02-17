@@ -239,7 +239,6 @@ a {
 .product-image-wrap {
   color: #fff;
   background-color: #f4f4f4;
-  background-image: url(https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -485,6 +484,80 @@ a {
   color: #333;
   text-decoration: none;
   position: relative;
+}
+
+.about-pictures-wrap {
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+      ". . ."
+      ". . .";
+  margin-bottom: 150px;
+}
+
+.layout-grid {
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
+.picture-placeholder {
+  background-color: #f4f4f4;
+  background-position: 45%;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  height: 460px;
+}
+
+.picture-placeholder.about-top {
+  background-image: url("/public/HomepageBackground.jpg");
+  background-position: 50%;
+  background-size: cover;
+}
+
+#top {
+  grid-area: 3 / 2 / 4 / 4;
+}
+
+.picture-placeholder.about-middle {
+  background-image: url("/public/HomepageBackground.jpg");
+  background-position: 50%;
+  background-size: cover;
+  height: 620px;
+}
+
+#middle {
+  grid-area: 2 / 1 / 3 / 4;
+}
+
+.picture-placeholder.about-bottom {
+  background-image: url("/public/HomepageBackground.jpg");
+  background-position: 50%;
+  background-size: cover;
+}
+
+#bottom {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.about-quote {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-container {
+  padding: 0 0 100px 0;
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer {
