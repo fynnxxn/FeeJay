@@ -67,7 +67,7 @@ function About() {
                     We believe in sustainability and fairness. Shopping with us is a risk-free experience, no delays, no defects, just pure imagination.
                     </div>
                     <div className="paragraph-light">
-                        ~ Jamie Jentsch und Fynnian Kolbe 
+                        ~ Jamie Jentsch and Fynnian Kolbe 
                     </div>
                 </div>
             </div>
