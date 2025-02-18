@@ -4,6 +4,8 @@ import Products from "./Products";
 import ProductDetail from "./ProductDetail";
 import CategoryProducts from "./CategoryProducts";
 import CartPage from "./CartPage";
+import CheckoutPage from "./CheckoutPage";
+import { useState } from "react";
 
 function App() {
     return (
@@ -14,7 +16,7 @@ function App() {
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/products/category/:category" element={<CategoryProducts />} />
                 <Route path="/cart" element={<CartPage/>} />
-                <Route path="/checkout" element={<CheckoutPage cart={cart} />} />
+                <Route path="/checkout" element={<CheckoutPage/>} />
             </Routes>
         </Router>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from './CartContext';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function CartPage() {
     const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
@@ -19,6 +20,8 @@ function CartPage() {
 
     //Dynamische PReisberechnung
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+    const navigate = useNavigate();
 
     return (
         <div className="cart-page">
@@ -60,6 +63,13 @@ function CartPage() {
                     </ul>
                     <h3>Total: {totalPrice.toFixed(2)} EUR</h3>
                     <button onClick={clearCart}>Clear Cart</button>
+
+                    <button
+                        onClick={() => navigate("/checkout")}
+                        disabled={cart.length === 0}
+                    >
+                        Zur Kasse
+                    </button>
                 </div>
             )}
             <Link to="/products">Continue Shopping</Link>
