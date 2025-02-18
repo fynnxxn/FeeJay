@@ -32,6 +32,7 @@ function CategoryProducts() {
                         <a href="/products" className="navigation-item link">Products</a>
                         <a href="/about" className="navigation-item link">About</a>
                         <a href="/contact" className="navigation-item link">Contact</a>
+                        <a href="/cart" className="navigation-item navigation-item-cart link">Cart</a>
                     </nav>
                 </div>
             </div>
