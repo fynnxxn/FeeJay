@@ -7,6 +7,8 @@ import About from "./About";
 import Contact from "./Contact";
 import CartPage from "./CartPage";
 import CheckoutPage from "./CheckoutPage";
+import Imprint from "./Imprint";
+import Shipping from "./Shipping";
 
 function App() {
     return (
@@ -20,6 +22,8 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/cart" element={<CartPage/>} />
                 <Route path="/checkout" element={<CheckoutPage/>} />
+                <Route path="/imprint" element={<Imprint/>} />
+                <Route path="/shipping" element={<Shipping/>} />
             </Routes>
         </Router>
     );

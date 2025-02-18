@@ -7,8 +7,7 @@ import { useCart } from "./CartContext";
 
 function ProductDetail() {
 
-    const {addToCart, cart} = useCart();
-
+    const {addToCart} = useCart();
     const { id } = useParams(); // Holt die ID aus der URL
     const [product, setProduct] = useState(null);
     const [error, setError] = useState(null);
@@ -132,7 +131,7 @@ function ProductDetail() {
                             help
                         </div>
                         <div id="help-content" className="links-section-footer">
-                            <a href="/contact" className="footer-link">Shipping</a>
+                            <a href="/shipping" className="footer-link">Shipping</a>
                             <a href="/contact" className="footer-link">Returns</a>
                             <a href="/contact" className="footer-link">Product Care</a>
                         </div>

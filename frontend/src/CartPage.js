@@ -113,7 +113,7 @@ function CartPage() {
                             help
                         </div>
                         <div id="help-content" className="links-section-footer">
-                            <a href="/contact" className="footer-link">Shipping</a>
+                            <a href="/shipping" className="footer-link">Shipping</a>
                             <a href="/contact" className="footer-link">Returns</a>
                             <a href="/contact" className="footer-link">Product Care</a>
                         </div>

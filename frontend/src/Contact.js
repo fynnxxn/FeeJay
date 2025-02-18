@@ -40,6 +40,7 @@ function ContactForm() {
                         <a href="/products" className="navigation-item link">Products</a>
                         <a href="/about" className="navigation-item link">About</a>
                         <a href="/contact" className="navigation-item link">Contact</a>
+                        <a href="/cart" className="navigation-item navigation-item-cart link">Cart</a>
                     </nav>
                 </div>
             </div>
@@ -130,7 +131,7 @@ function ContactForm() {
                             help
                         </div>
                         <div id="help-content" className="links-section-footer">
-                            <a href="/contact" className="footer-link">Shipping</a>
+                            <a href="/shipping" className="footer-link">Shipping</a>
                             <a href="/contact" className="footer-link">Returns</a>
                             <a href="/contact" className="footer-link">Product Care</a>
                         </div>
