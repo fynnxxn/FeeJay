@@ -15,34 +15,20 @@ function Products() {
 
     return (
         <div className="products">
-            <div className="navigation-items">
-                <a href="/" className="logo-link nav-brand" aria-label="home">
-                    <img src="/logo.png" width="65" alt="logo"></img>
-                </a>
-                <div className="navigation-wrap">
-                    <nav role="navigation" className="navigation-items-menu">
-                        <a href="/products" className="navigation-item link">Products</a>
-                        <a href="/about" className="navigation-item link">About</a>
-                        <a href="/contact" className="navigation-item link">Contact</a>
-                        <a href="/cart" className="navigation-item navigation-item-cart link">Cart</a>
-                    </nav>
-                </div>
-            </div>
-
             <div className="section">
                 <div className="container heading-wrap">
                     <h1>
                         Our Products
                     </h1>
-                        <div className="store-categories-wrap">
-                            <a href="/products" className={`products-category-link ${location.pathname === "/products" ? " current" : ""}`}>
-                                All Products
-                            </a>
+                    <div className="store-categories-wrap">
+                        <a href="/products" className={`products-category-link ${location.pathname === "/products" ? " current" : ""}`}>
+                            All Products
+                        </a>
                         <div className="dyn-list">
                             <div role="list" className="collection-list dyn-items">
                                 {products.length > 0 ? (
                                     [...new Set(products.map(product => product.category))].map(category => (
-                                        <div key={category} role="listitem" className="dyn-items">   
+                                        <div key={category} role="listitem" className="dyn-items">
                                             <a href={`/products/category/${category}`} className="products-category-link">
                                                 {category}
                                             </a>
@@ -61,8 +47,8 @@ function Products() {
                 <div className="dyn-list">
                     <div role="list" className="collection-wrap dyn-items">
                         {products.map(product => (
-                            <div key={product.id} role="listitem" className="collection-item dyn-items">   
-                                <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: `url(${product.imageUrl})`}}>
+                            <div key={product.id} role="listitem" className="collection-item dyn-items">
+                                <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{ backgroundImage: `url(${product.imageUrl})` }}>
                                     <div className="product-description">
                                         <div className="product-name-text">
                                             {product.name}
@@ -77,52 +63,6 @@ function Products() {
                     </div>
                 </div>
             </div>
-
-            <div className="section">
-                <div className="container">
-                    <div className="layout-grid footer">
-                        <a href="/" id="logo-footer" className="logo-link inline-block" aria-label="home">
-                            <img src="/logo.png" width="65" alt="logo"></img>
-                        </a>
-
-                        <div id="menu-top" className="label">
-                            menu
-                        </div>
-                        <div id="menu-content" className="links-section-footer">
-                            <a href="/" className="footer-link">Home</a>
-                            <a href="/products" className="footer-link">Products</a>
-                            <a href="/contact" className="footer-link">Contact</a>
-                            <a href="/about" className="footer-link">About</a>
-                        </div>
-
-                        <div id="help-top" className="label">
-                            help
-                        </div>
-                        <div id="help-content" className="links-section-footer">
-                            <a href="/shipping" className="footer-link">Shipping</a>
-                            <a href="/contact" className="footer-link">Returns</a>
-                            <a href="/contact" className="footer-link">Product Care</a>
-                        </div>
-
-                        <div id="legal-top" className="label">
-                            legal
-                        </div>
-                        <div id="legal-content" className="links-section-footer">
-                            <a href="/imprint" className="footer-link">Imprint</a>
-                        </div>
-
-                        <div id="follow-top" className="label">
-                            follow
-                        </div>
-                        <div id="follow-content" className="links-section-footer">
-                            <a href="https://www.instagram.com/jamie.tsc/" className="footer-link">Instagram</a>
-                            <a href="https://www.linkedin.com/in/jamie-jentsch-63308a28b/?originalSubdomain=de" className="footer-link">LinkedIn</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
         </div>
     );
 }

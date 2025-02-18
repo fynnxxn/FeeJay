@@ -9,10 +9,13 @@ import CartPage from "./CartPage";
 import CheckoutPage from "./CheckoutPage";
 import Imprint from "./Imprint";
 import Shipping from "./Shipping";
+import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 function App() {
     return (
         <Router>
+            <Navigation />
             <Routes>
                 <Route path="/" element={<HomePage />} /> 
                 <Route path="/products" element={<Products />} />
@@ -25,6 +28,7 @@ function App() {
                 <Route path="/imprint" element={<Imprint/>} />
                 <Route path="/shipping" element={<Shipping/>} />
             </Routes>
+            <Footer/>
         </Router>
     );
 }

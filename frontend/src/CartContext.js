@@ -16,6 +16,7 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  //Artikel zum Warenkorb hinzufügen
   const addToCart = async (product, quantity) => {
     try {
       const response = await fetch("http://localhost:8080/cart", {
@@ -30,6 +31,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  //Einzelnen Artikel aus dem Warenkorb löschen
   const removeFromCart = async (id) => {
     try {
       const response = await fetch(`http://localhost:8080/cart/${id}`, {
@@ -42,6 +44,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  //Warenkorb vollständig löschen
   const clearCart = async () => {
     try {
       await fetch("http://localhost:8080/cart", { method: "DELETE" });
@@ -51,6 +54,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  //Anzahl updaten => wird für die Preisberechnung benötigt später
   const updateQuantity = (id, quantity) => {
     setCart(prevCart =>
       prevCart.map(item =>
@@ -58,6 +62,11 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
+
+  //Zum berechnen der insgesamt im Warenkorb enthaltenden Artikel
+  const getTotalItemCount = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  }
 
 
   // Beim Laden des Shops den Warenkorb vom Server holen
@@ -69,7 +78,7 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, updateQuantity }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, updateQuantity, getTotalItemCount }}>
       {children}
     </CartContext.Provider>
   );
