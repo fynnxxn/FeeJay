@@ -18,6 +18,8 @@ const products = [
     { id: 4, name: "Glasnagel", price: 1, description: "Perfekt zum aufhängen von Gegenständen an Glasflächen", category: "werkzeuge", shipping:"3-5", weight: 5},
 ];
 
+var supportRequests = []
+
 app.get('/products', (req, res) => {
     const { category } = req.query;
 
@@ -42,3 +44,25 @@ app.get('/products/:id', (req, res) => {
 
     res.json(product);
 })
+
+app.post('/contact', (req, res) => {
+    const {name, email, message} = req.body;
+
+    if(!name || !email || !message) {
+        return res.status(400).json({message: "required fields: name, email, message"})
+    }
+
+    const newRequest = {
+        id: supportRequests.length + 1,
+        name: name,
+        email: email,
+        message: message,
+    };
+
+    supportRequests.push(newRequest);
+
+    res.status(201).json({ message: "Anfrage erfolgreich gespeichert" });
+    console.log(supportRequests)
+})
+
+
