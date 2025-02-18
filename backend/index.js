@@ -17,11 +17,11 @@ const path = require("path");
 app.use("/images", express.static(path.join(__dirname, "../frontend/public")));
 
 const products = [
-    { id: 1, name: "HDMI auf Gardena", price: 19, description: "Ein Adapter um Full HD auf Liter umzuwandeln, verteilt perfekt", category: "adapter", shipping: "2-3", weight: 300, imageUrl: "http://localhost:8080/images/gardena_hdmi.jpg" },
+    { id: 1, name: "HDMI auf Gardena", price: 19, description: "Ein Adapter um Full HD auf Liter umzuwandeln, verteilt perfekt", category: "adapter", shipping: "2-3", weight: 300, imageUrl: "http://localhost:8080/images/gardena_hdmi.jpeg" },
     { id: 2, name: "Starkstrom auf Lightning", price: 9, description: "Dieser Adapter lädt ihr Handy von 0-100% in 3,2 Sekunden auf", category: "adapter", shipping: "1-2", weight: 550, imageUrl: "http://localhost:8080/images/starkstrom_lightning.jpeg" },
-    { id: 3, name: "Blinkerflüssigkeit", price: 14, description: "Blinkerflüssigkeit zum Nachfüllen für Audi und BMW Blinker", category: "autoteile", shipping:"3-5", weight: 500, imageUrl: "http://localhost:8080/images/blinkerfluessigkeit.jpg" },
+    { id: 3, name: "Blinkerflüssigkeit", price: 14, description: "Blinkerflüssigkeit zum Nachfüllen für Audi und BMW Blinker", category: "autoteile", shipping:"3-5", weight: 500, imageUrl: "http://localhost:8080/images/blinkerfluessigkeit.jpeg" },
     { id: 4, name: "Glasnagel", price: 1, description: "Perfekt zum Aufhängen von Gegenständen an Glasflächen", category: "werkzeuge", shipping:"3-5", weight: 5, imageUrl: "http://localhost:8080/images/glasnagel.jpeg" },
-    { id: 5, name: "Getriebesand", price: 120, description: "Für ein sandiges Fahrgefühl", category: "autoteile", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpg" }
+    { id: 5, name: "Getriebesand", price: 120, description: "Für ein sandiges Fahrgefühl", category: "autoteile", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpeg" }
 ];
 
 let supportRequests = [] //Array für die Contact/Support Requests
