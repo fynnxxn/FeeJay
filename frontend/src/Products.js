@@ -24,6 +24,7 @@ function Products() {
                         <a href="/products" className="navigation-item link">Products</a>
                         <a href="/about" className="navigation-item link">About</a>
                         <a href="/contact" className="navigation-item link">Contact</a>
+                        <a href="/cart" className="navigation-item navigation-item-cart link">Cart</a>
                     </nav>
                 </div>
             </div>
@@ -61,7 +62,7 @@ function Products() {
                     <div role="list" className="collection-wrap dyn-items">
                         {products.map(product => (
                             <div key={product.id} role="listitem" className="collection-item dyn-items">   
-                                <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: 'url("/HomepageBackground.jpg")'}}>
+                                <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: `url(${product.imageUrl})`}}>
                                     <div className="product-description">
                                         <div className="product-name-text">
                                             {product.name}

@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useCart } from "./CartContext";
+
+
 
 function ProductDetail() {
+
+    const {addToCart, cart} = useCart();
+
     const { id } = useParams(); // Holt die ID aus der URL
     const [product, setProduct] = useState(null);
     const [error, setError] = useState(null);
@@ -28,12 +34,13 @@ function ProductDetail() {
                         <a href="/products" className="navigation-item link">Products</a>
                         <a href="/about" className="navigation-item link">About</a>
                         <a href="/contact" className="navigation-item link">Contact</a>
+                        <a href="/cart" className="navigation-item navigation-item-cart link">Cart</a>
                     </nav>
                 </div>
             </div>
         
             <div className="section product-detail">
-                <div className="product-image" style={{backgroundImage: 'url("/HomepageBackground.jpg")'}}>
+                <div className="product-image" style={{backgroundImage: `url(${product.imageUrl})`}}>
                 </div>
                 <div className="product-details-wrap">
                     <div className="product-detail-main-details">
@@ -94,6 +101,10 @@ function ProductDetail() {
                                 data-loading-text="Adding to cart..." 
                                 className="addtocartbutton primary-button add-to-cart-button" 
                                 value="Add to cart"
+                                onClick={() => {
+                                    addToCart(product, quantity);
+                                    console.log('Zum Warenkorb hinzugefügt: ', product, quantity);
+                                }}
                             />
                         </div>
                     </div>

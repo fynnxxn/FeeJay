@@ -22,6 +22,7 @@ function HomePage() {
                         <a href="/products" className="navigation-item link">Products</a>
                         <a href="/about" className="navigation-item link">About</a>
                         <a href="/contact" className="navigation-item link">Contact</a>
+                        <a href="/cart" className="navigation-item navigation-item-cart link">Cart</a>
                     </nav>
                 </div>
             </div>
@@ -73,7 +74,7 @@ function HomePage() {
                 <div role="list" className="collection-wrap product-list">
                     {products.slice(0, 3).map(product => (
                         <div key={product.id} role="listitem" className="collection-item product-list">   
-                            <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: 'url("/HomepageBackground.jpg")'}}>
+                            <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: `url(${product.imageUrl})`}}>
                                 <div className="product-description">
                                     <div className="product-name-text">
                                         {product.name}
