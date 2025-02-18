@@ -674,10 +674,6 @@ a {
   grid-area: 1 / 5 / 2 / 6;
 }
 
-.cart-page {
-  font-family: Montserrat, sans-serif;
-}
-
 .cart-heading {
   font-size: 32px;
   text-align: center;
@@ -693,32 +689,23 @@ a {
 .cart-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .cart-list {
+  align-items: center;
   list-style: none;
   padding: 0;
   width: 100%;
-  max-width: 600px;
 }
 
 .cart-item {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f8f8f8;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
-}
-
-.cart-item-image {
-  width: 80px;
-  height: 80px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
 }
 
 .cart-item-details {
@@ -751,24 +738,12 @@ a {
 }
 
 .cart-summary {
-  text-align: center;
+  text-align: right;
   margin-top: 20px;
 }
 
 .total-price {
   font-size: 24px;
-  font-weight: bold;
-}
-
-.clear-cart-button, .checkout-button {
-  display: block;
-  width: 200px;
-  margin: 10px auto;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
 }
 
 .clear-cart-button {
@@ -789,7 +764,6 @@ a {
 .continue-shopping {
   display: block;
   text-align: center;
-  margin-top: 20px;
   font-size: 18px;
 }
 
@@ -827,11 +801,6 @@ a {
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 10px;
-}
-
-.total-price {
-  font-size: 24px;
-  font-weight: bold;
 }
 
 .checkout-input, .checkout-select {

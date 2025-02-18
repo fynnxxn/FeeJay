@@ -70,7 +70,7 @@ function CategoryProducts() {
                     <div role="list" className="collection-wrap dyn-items">
                         {filteredProducts.map(product => (
                             <div key={product.id} role="listitem" className="collection-item dyn-items">   
-                                <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: 'url("/HomepageBackground.jpg")'}}>
+                                <a href={`/products/${product.id}`} className="product-image-wrap inline-block" style={{backgroundImage: `url(${product.imageUrl})`}}>
                                     <div className="product-description">
                                         <div className="product-name-text">
                                             {product.name}

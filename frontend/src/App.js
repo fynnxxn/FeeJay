@@ -7,7 +7,6 @@ import About from "./About";
 import Contact from "./Contact";
 import CartPage from "./CartPage";
 import CheckoutPage from "./CheckoutPage";
-import { useState } from "react";
 
 function App() {
     return (
