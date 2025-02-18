@@ -44,12 +44,13 @@ function CartPage() {
                     </a>
                 </div>
 
-                <div className="divider dark-divider"></div>
+                
 
                     {cart.length === 0 ? (
                         <p className="empty-cart">Your cart is empty.</p>
                     ) : (
                         <div className="cart-container">
+                            <div className="divider dark-divider"></div>
                             <ul className="cart-list">
                                 {cart.map(item => (
                                     <li key={item.id} className="cart-item">

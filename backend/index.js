@@ -24,8 +24,9 @@ const products = [
     { id: 5, name: "Getriebesand", price: 120, description: "Für ein sandiges Fahrgefühl", category: "autoteile", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpg" }
 ];
 
-let supportRequests = []
+let supportRequests = [] //Array für die Contact/Support Requests
 let cart = []; //Array für den Warenkorb
+let orders = []
 
 app.get('/products', (req, res) => {
     const { category } = req.query;
@@ -70,6 +71,24 @@ app.post('/contact', (req, res) => {
 
     res.status(201).json({ message: "Anfrage erfolgreich gespeichert" });
     console.log(supportRequests)
+})
+
+app.post('/checkout', (req, res) => {
+    const {firstname, lastname, street, city, article, quantity} = req.body;
+
+    const newOrder = {
+        id: orders.length + 1,
+        firstname: firstname,
+        lastname: lastname,
+        street: street,
+        city: city,
+        article: article,
+        quantity: quantity
+    };
+
+    orders.push(newOrder);
+    res.status(201).json({ message: "Bestellung erfolgreich", order: newOrder });
+    console.log(orders)
 })
 
 
