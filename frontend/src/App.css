@@ -258,12 +258,14 @@ a {
   font-size: 20px;
   font-weight: 500;
   line-height: 34px;
+  color: black;
 }
 
 .product-price-text {
   opacity: .6;
   font-size: 14px;
   line-height: 26px;
+  color:#333;
 }
 
 .section {
