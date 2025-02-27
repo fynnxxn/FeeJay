@@ -51,7 +51,7 @@ Falls Node.js, npm, React oder Express noch nicht installiert sind, können sie 
 ### Repository klonen und starten
 1. **Repository klonen:**
    ```bash
-   git clone https://github.com/deinBenutzername/FeeJay.git
+   git clone https://github.com/fynnxxn/FeeJay.git
    cd FeeJay
    ```
 
@@ -59,14 +59,14 @@ Falls Node.js, npm, React oder Express noch nicht installiert sind, können sie 
    ```bash
    cd backend
    npm install
-   npm start
+   node .
    ```
 
 3. **Frontend installieren & starten:**
    ```bash
    cd frontend
    npm install
-   npm run dev
+   npm start
    ```
 
 ## API-Endpunkte
