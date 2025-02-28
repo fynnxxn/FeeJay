@@ -28,6 +28,7 @@ FeeJay ist ein moderner Webshop, der mit React im Frontend und Node.js sowie Exp
 
 ## Installation
 ### Voraussetzungen
+Falls Git nicht installiert [hier](https://git-scm.com/book/de/v2/Erste-Schritte-Git-installieren) für das eigene Betriebssystem installieren. 
 Falls Node.js, npm, React oder Express noch nicht installiert sind, können sie wie folgt installiert werden:
 
 1. **Node.js und npm installieren:**
@@ -38,12 +39,7 @@ Falls Node.js, npm, React oder Express noch nicht installiert sind, können sie 
      npm -v
      ```
 
-2. **React installieren:**
-   ```bash
-   npm install -g create-react-app
-   ```
-
-3. **Express im Backend installieren:**
+2. **Express im Backend installieren:**
    ```bash
    npm install express
    ```
