@@ -17,17 +17,18 @@ const path = require("path");
 app.use("/images", express.static(path.join(__dirname, "../frontend/public")));
 
 const products = [
-    { id: 1, name: "HDMI auf Gardena", price: 19, description: "Ein Adapter um Full HD auf Liter umzuwandeln, verteilt perfekt", category: "adapter", shipping: "2-3", weight: 300, imageUrl: "http://localhost:8080/images/gardena_hdmi.jpeg" },
-    { id: 2, name: "Starkstrom auf Lightning", price: 9, description: "Dieser Adapter lädt ihr Handy von 0-100% in 3,2 Sekunden auf", category: "adapter", shipping: "1-2", weight: 550, imageUrl: "http://localhost:8080/images/starkstrom_lightning.jpeg" },
-    { id: 3, name: "Blinkerflüssigkeit", price: 14, description: "Blinkerflüssigkeit zum Nachfüllen für Audi und BMW Blinker", category: "autoteile", shipping:"3-5", weight: 500, imageUrl: "http://localhost:8080/images/blinkerfluessigkeit.jpeg" },
-    { id: 4, name: "Glasnagel", price: 1, description: "Perfekt zum Aufhängen von Gegenständen an Glasflächen", category: "werkzeuge", shipping:"3-5", weight: 5, imageUrl: "http://localhost:8080/images/glasnagel.jpeg" },
-    { id: 5, name: "Getriebesand", price: 120, description: "Für ein sandiges Fahrgefühl", category: "autoteile", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpeg" }
+    { id: 1, name: "HDMI auf Gardena", price: 19, description: "Ein Adapter um Full HD auf Liter umzuwandeln, verteilt perfekt", shipping: "2-3", weight: 300, imageUrl: "http://localhost:8080/images/gardena_hdmi.jpeg" },
+    { id: 2, name: "Starkstrom auf Lightning", price: 9, description: "Dieser Adapter lädt ihr Handy von 0-100% in 3,2 Sekunden auf", shipping: "1-2", weight: 550, imageUrl: "http://localhost:8080/images/starkstrom_lightning.jpeg" },
+    { id: 3, name: "Blinkerflüssigkeit", price: 14, description: "Blinkerflüssigkeit zum Nachfüllen für Audi und BMW Blinker", shipping:"3-5", weight: 500, imageUrl: "http://localhost:8080/images/blinkerfluessigkeit.jpeg" },
+    { id: 4, name: "Glasnagel", price: 1, description: "Perfekt zum Aufhängen von Gegenständen an Glasflächen", shipping:"3-5", weight: 5, imageUrl: "http://localhost:8080/images/glasnagel.jpeg" },
+    { id: 5, name: "Getriebesand", price: 120, description: "Für ein sandiges Fahrgefühl", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpeg" }
 ];
 
 let supportRequests = [] //Array für die Contact/Support Requests
 let cart = []; //Array für den Warenkorb
-let orders = []
+let orders = []; //Array für die Bestellungen
 
+//GET: Produkte
 app.get('/products', (req, res) => {
     const { category } = req.query;
 
@@ -38,10 +39,12 @@ app.get('/products', (req, res) => {
     res.json(products)
 })
 
+//GET: Homepage Produkte
 app.get('/', (req, res) => {
     res.json(products)
 })
 
+//GET: Podukte mit Produkt ID
 app.get('/products/:id', (req, res) => {
     const productId = parseInt(req.params.id);
     const product = products.find(p => p.id === productId);
@@ -53,6 +56,7 @@ app.get('/products/:id', (req, res) => {
     res.json(product);
 })
 
+//POST: Kontaktformular
 app.post('/contact', (req, res) => {
     const {name, email, message} = req.body;
 
@@ -73,6 +77,7 @@ app.post('/contact', (req, res) => {
     console.log(supportRequests)
 })
 
+//POST: Checkout mit Bestelldaten
 app.post('/checkout', (req, res) => {
     const {firstname, lastname, street, city, article, quantity} = req.body;
 
