@@ -41,6 +41,7 @@ const Footer = () => {
                     <div id="follow-content" className="links-section-footer">
                         <a href="https://www.instagram.com/jamie.tsc/" className="footer-link">Instagram</a>
                         <a href="https://www.linkedin.com/in/jamie-jentsch-63308a28b/?originalSubdomain=de" className="footer-link">LinkedIn</a>
+                        <a href="https://github.com/fynnxxn/FeeJay" className="footer-link">GitHub</a>
                     </div>
 
                 </div>
