@@ -70,7 +70,7 @@ function CartPage() {
                                     onClick={() => navigate("/checkout")}
                                     disabled={cart.length === 0}
                                 >
-                                    Zur Kasse
+                                    Checkout
                                 </button>
                             </div>
                         </div>

@@ -516,7 +516,7 @@ a {
 }
 
 .picture-placeholder.about-top {
-  background-image: url("/public/HomepageBackground.jpg");
+  background-image: url("/public/feejay_raum.JPG");
   background-position: 50%;
   background-size: cover;
 }
@@ -537,7 +537,7 @@ a {
 }
 
 .picture-placeholder.about-bottom {
-  background-image: url("/public/HomepageBackground.jpg");
+  background-image: url("/public/feejay_tower.jpg");
   background-position: 50%;
   background-size: cover;
 }

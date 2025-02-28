@@ -17,11 +17,11 @@ const path = require("path");
 app.use("/images", express.static(path.join(__dirname, "../frontend/public")));
 
 const products = [
-    { id: 1, name: "HDMI auf Gardena", price: 19, description: "Ein Adapter um Full HD auf Liter umzuwandeln, verteilt perfekt", shipping: "2-3", weight: 300, imageUrl: "http://localhost:8080/images/gardena_hdmi.jpeg" },
-    { id: 2, name: "Starkstrom auf Lightning", price: 9, description: "Dieser Adapter lädt ihr Handy von 0-100% in 3,2 Sekunden auf", shipping: "1-2", weight: 550, imageUrl: "http://localhost:8080/images/starkstrom_lightning.jpeg" },
-    { id: 3, name: "Blinkerflüssigkeit", price: 14, description: "Blinkerflüssigkeit zum Nachfüllen für Audi und BMW Blinker", shipping:"3-5", weight: 500, imageUrl: "http://localhost:8080/images/blinkerfluessigkeit.jpeg" },
-    { id: 4, name: "Glasnagel", price: 1, description: "Perfekt zum Aufhängen von Gegenständen an Glasflächen", shipping:"3-5", weight: 5, imageUrl: "http://localhost:8080/images/glasnagel.jpeg" },
-    { id: 5, name: "Getriebesand", price: 120, description: "Für ein sandiges Fahrgefühl", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpeg" }
+    { id: 1, name: "HDMI to Gardena", price: 19, description: "An adapter to convert Full HD to liter, distributes perfectly", shipping: "2-3", weight: 300, imageUrl: "http://localhost:8080/images/gardena_hdmi.jpeg" },
+    { id: 2, name: "High voltage to Lightning", price: 9, description: "This adapter charges your phone from 0-100% in 3.2 seconds", shipping: "1-2", weight: 550, imageUrl: "http://localhost:8080/images/starkstrom_lightning.jpeg" },
+    { id: 3, name: "Turn signal fluid", price: 14, description: "Indicator fluid for refilling Audi and BMW indicators", shipping:"3-5", weight: 500, imageUrl: "http://localhost:8080/images/blinkerfluessigkeit.jpeg" },
+    { id: 4, name: "Glass nail", price: 1, description: "Perfect for hanging items on glass surfaces", shipping:"3-5", weight: 5, imageUrl: "http://localhost:8080/images/glasnagel.jpeg" },
+    { id: 5, name: "Gear sand", price: 120, description: "For a sandy driving experience", shipping:"3-5", weight: 1000, imageUrl: "http://localhost:8080/images/getriebesand.jpeg" }
 ];
 
 let supportRequests = [] //Array für die Contact/Support Requests
@@ -30,12 +30,6 @@ let orders = []; //Array für die Bestellungen
 
 //GET: Produkte
 app.get('/products', (req, res) => {
-    const { category } = req.query;
-
-    if (category) {
-        const filteredProducts = products.filter(p => p.category.toLowerCase() === category.toLowerCase());
-        return res.json(filteredProducts)
-    }
     res.json(products)
 })
 
@@ -73,7 +67,7 @@ app.post('/contact', (req, res) => {
 
     supportRequests.push(newRequest);
 
-    res.status(201).json({ message: "Anfrage erfolgreich gespeichert" });
+    res.status(201).json({ message: "Request successfully sent" });
     console.log(supportRequests)
 })
 

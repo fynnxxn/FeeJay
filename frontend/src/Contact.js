@@ -17,14 +17,14 @@ function ContactForm() {
 
         axios.post('http://localhost:8080/contact', requestData)
             .then(response => {
-                alert('Anfrage erfolgreich gesendet!');
+                alert('Your request was submitted!');
                 setName('');
                 setEmail('');
                 setMessage('');
             })
             .catch(error => {
                 console.error(error);
-                alert('Fehler beim Senden der Anfrage!');
+                alert('Error sending your request!');
             });
     };
 

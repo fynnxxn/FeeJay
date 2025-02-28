@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 function Products() {
     const [products, setProducts] = useState([]);
-    const location = useLocation();
-
 
     useEffect(() => {
         axios.get("http://localhost:8080/products")
@@ -20,26 +17,6 @@ function Products() {
                     <h1>
                         Our Products
                     </h1>
-                    <div className="store-categories-wrap">
-                        <a href="/products" className={`products-category-link ${location.pathname === "/products" ? " current" : ""}`}>
-                            All Products
-                        </a>
-                        <div className="dyn-list">
-                            <div role="list" className="collection-list dyn-items">
-                                {products.length > 0 ? (
-                                    [...new Set(products.map(product => product.category))].map(category => (
-                                        <div key={category} role="listitem" className="dyn-items">
-                                            <a href={`/products/category/${category}`} className="products-category-link">
-                                                {category}
-                                            </a>
-                                        </div>
-                                    ))
-                                ) : (
-                                    <p>Loading categories...</p>
-                                )}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 

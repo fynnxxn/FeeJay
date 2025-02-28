@@ -49,8 +49,6 @@ const CheckoutPage = () => {
 
     return (
         <div className="checkout-page">
-
-            {/* Checkout Container */}
             <div className="section">
                 <div className="container heading-wrap">
                     <h1>Checkout</h1>
@@ -59,10 +57,9 @@ const CheckoutPage = () => {
                     </div>
                 </div>
                     {orderSuccess ? (
-                        <p className="success-message">✅ Bestellung erfolgreich! Du wirst weitergeleitet...</p>
+                        <p className="success-message">✅ Order was successfull! You will be redirected...</p>
                     ) : (
                         <div className="checkout-container">
-                            {/* Bestellübersicht */}
                             <div className="divider dark-divider checkout-divider"></div>
                             <ul className="checkout-list">
                                 {cart.map((item) => (
@@ -74,7 +71,6 @@ const CheckoutPage = () => {
                             <div className="divider dark-divider checkout-divider"></div>
                             <h3 className="total-price checkout"> Total: {totalPrice.toFixed(2)} EUR</h3> 
 
-                            {/* Lieferadresse */}
                             <h3>Delivery adress</h3>
                             <div className="checkout-adress-input">
                                 <input 
@@ -114,7 +110,7 @@ const CheckoutPage = () => {
                                 disabled={cart.length === 0 || !firstname || !lastname || !street || !city}
                                 className="primary-button"
                             >
-                                Bestellung abschließen
+                                Complete order
                             </button>
                         </div>
                     )}
